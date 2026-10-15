@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#552078">
+<meta name="description" content="Emoções em Equilíbrio: emoções, autocuidado e apoio educativo.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Emoções em Equilíbrio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:#35145d;background:linear-gradient(135deg,#f8eaff,#fff3e7);min-height:100vh}
+header{padding:12px 6%;display:flex;align-items:center;justify-content:space-between;gap:15px;background:#fff;box-shadow:0 4px 20px #49196426;position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:10px;color:#481276}.logo-icone{font-size:32px}.logo small{display:block;color:#80618f;font-size:10px}
+nav{display:flex;align-items:center;gap:15px;flex-wrap:wrap}nav a{font-size:14px;font-weight:bold;color:#452066;text-decoration:none}nav a:hover{color:#ff6717}
+.botao{display:inline-block;padding:11px 19px;margin:5px;border:0;border-radius:28px;background:#7131ad;color:white;text-decoration:none;font-weight:bold;cursor:pointer;transition:.2s}.botao:hover{transform:translateY(-2px)}.laranja{background:#ff6717}.verde{background:#319b67}
+.hero{min-height:470px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 5%;color:#fff;background:radial-gradient(circle at 15% 50%,#7135a5,transparent 28%),radial-gradient(circle at 85% 50%,#ff6a18,transparent 30%),linear-gradient(120deg,#38115f,#67218d,#a83b75)}
+.hero-conteudo{position:relative;z-index:5;max-width:650px}.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.05;margin-bottom:18px;text-shadow:3px 4px #321050}.hero h1 span{color:#ff741d}.hero p{font-size:19px;line-height:1.5;margin-bottom:22px}
+.personagem{position:absolute;bottom:0;z-index:3;width:clamp(120px,20vw,250px);max-height:360px}.personagem img{width:100%;max-height:360px;object-fit:contain;filter:drop-shadow(0 12px 12px #0005)}.personagem-medo{left:3%}.personagem-ansiedade{right:3%;width:clamp(130px,22vw,270px)}
+.memoria{position:absolute;width:35px;height:35px;border-radius:50%;box-shadow:0 0 18px #ffffff99}.m1{background:#ffcc32;top:18%;left:30%}.m2{background:#53b6e8;top:25%;right:30%}.m3{background:#55bd74;bottom:20%;left:32%}.m4{background:#d9519b;bottom:25%;right:32%}
+.secao,.ajuda{padding:48px 7%}.titulo{text-align:center;color:#461473;font-size:29px;margin-bottom:25px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1100px;margin:auto}.card{min-height:245px;border-radius:24px;padding:25px;position:relative;overflow:hidden;box-shadow:0 10px 25px #46195f20}.medo{background:linear-gradient(135deg,#ead8ff,#c99bea);border:3px solid #8a4dc2}.ansiedade{background:linear-gradient(135deg,#fff0dc,#ffb875);border:3px solid #ff7620}.card h2{font-size:21px;margin-bottom:12px;position:relative;z-index:2}.medo h2{color:#542086}.ansiedade h2{color:#c74c0a}.card p{max-width:440px;line-height:1.6;color:#553d64;margin-bottom:10px;position:relative;z-index:2}.card-personagem{position:absolute;right:5px;bottom:0;width:125px;max-height:180px;object-fit:contain;opacity:.9}
+.ajuda{background:linear-gradient(#f7e9ff,#fff5ea)}.recursos{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.recurso{background:white;padding:22px 16px;text-align:center;border-radius:18px;box-shadow:0 8px 22px #4b1e641f;border-bottom:5px solid #7131ad}.icone{font-size:30px;margin-bottom:10px}.recurso h3{font-size:15px;margin-bottom:8px;color:#4a1971}.recurso p{font-size:13px;color:#75667d;line-height:1.5}.botoes{text-align:center;margin-top:25px}
+#autocuidado,#crise,#sobre-nos,#ia,#contatos,#filmes{display:none;min-height:80vh;padding:45px 7%}.pagina{max-width:1100px;margin:auto}.voltar{display:inline-block;margin-bottom:22px;padding:10px 16px;background:#7131ad;color:white;border:0;border-radius:25px;cursor:pointer;font-weight:bold}.titulo-pagina{text-align:center;font-size:clamp(29px,4vw,40px);color:#5b2181;margin-bottom:15px}.titulo-pagina span{color:#ff6717}.intro{text-align:center;max-width:800px;margin:0 auto 28px;line-height:1.8;color:#66566f;font-size:16px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info{background:#ffffffed;padding:23px;border-radius:20px;box-shadow:0 8px 22px #4c1e641c;border-top:6px solid #7131ad}.info:nth-child(2){border-top-color:#ff6717}.info:nth-child(3){border-top-color:#43a86d}.info h2{color:#571d7f;margin-bottom:10px;font-size:19px}.info p{color:#66566f;line-height:1.7}.dicas,.ajuda-crise{margin-top:23px;padding:25px;border-radius:22px;background:linear-gradient(120deg,#ead8ff,#ffe3cf);line-height:1.8;color:#5f4d68}.dicas h2,.ajuda-crise h2{color:#5b2181;margin-bottom:10px}.dicas ul{padding-left:22px}.dicas li{margin:7px 0}
+#crise{background:radial-gradient(circle at 10% 20%,#e5c7ff,transparent 25%),radial-gradient(circle at 90% 70%,#ffd0ae,transparent 25%),linear-gradient(135deg,#fff4eb,#f3e5ff)}
+.aviso{background:white;border-left:6px solid #ff741d;border-radius:14px;padding:18px;margin-bottom:22px;line-height:1.7;color:#5f4d68}.passos{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.passo{background:white;padding:22px;border-radius:19px;border-top:5px solid #7131ad;box-shadow:0 8px 22px #4c1e6415}.passo:nth-child(even){border-top-color:#ff741d}.passo h2{color:#592184;font-size:19px;margin-bottom:9px}.passo p{color:#66566f;line-height:1.7}
+footer{background:linear-gradient(90deg,#35105c,#641e85,#35105c);color:white;text-align:center;padding:23px;font-size:13px}
+.extra-form{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.extra-form input,.extra-form textarea{flex:1;min-width:180px;padding:12px 14px;border:1px solid #d5b8e7;border-radius:12px;font:inherit;color:#35145d}.extra-form textarea{flex-basis:100%;min-height:90px}.chat-box{background:#fff;padding:20px;border-radius:18px;max-width:850px;margin:auto;box-shadow:0 8px 22px #4c1e641c}.chat-log{height:300px;overflow:auto;background:#fbf7ff;border-radius:12px;padding:14px;margin:14px 0}.chat-msg{padding:10px 13px;border-radius:13px;margin:8px 0;line-height:1.6;white-space:pre-wrap}.chat-msg.user{background:#ead8ff;margin-left:12%}.chat-msg.bot{background:#fff0dc;margin-right:12%}.muted{font-size:13px;color:#75667d;line-height:1.6}.item-salvo{background:white;padding:15px;border-radius:14px;margin:10px 0;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.filmes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.filme{background:white;padding:20px;border-radius:18px;border-top:5px solid #ff6717;box-shadow:0 8px 22px #4c1e641c}.filme h2{font-size:18px;margin-bottom:8px;color:#571d7f}.filme p{line-height:1.6;color:#66566f;font-size:14px}.status-ia{font-size:13px;margin-top:8px;color:#66566f}.footer-extra{margin-top:8px;opacity:.9}
+@media(max-width:850px){header{flex-direction:column}nav{justify-content:center}.cards,.info-grid,.filmes-grid{grid-template-columns:1fr}.recursos{grid-template-columns:repeat(2,1fr)}.personagem{opacity:.45}}
+@media(max-width:600px){.hero{min-height:480px}.hero p{font-size:16px}.personagem-medo{left:-20px}.personagem-ansiedade{right:-20px}.recursos,.passos{grid-template-columns:1fr}.card-personagem{width:95px;opacity:.35}.secao,.ajuda{padding:35px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><div class="logo-icone">🧠</div><div><strong>EMOÇÕES EM<br>EQUILÍBRIO</strong><small>Seu site sobre bem-estar emocional</small></div></div>
+  <nav>
+    <a href="#" onclick="mostrarInicio();return false">Início</a>
+    <a href="#" onclick="mostrarSobreNos();return false">Sobre Nós</a>
+    <a href="#recursos" onclick="mostrarInicio()">Recursos</a>
+    <a href="#" onclick="mostrarAutocuidado();return false">Autocuidado</a>
+    <a href="#" onclick="mostrarIA();return false">Conversa IA</a>
+    <a href="#" onclick="mostrarContatos();return false">Contatos</a>
+    <a href="#" onclick="mostrarFilmes();return false">Filmes</a>
+    <a href="#" class="botao laranja" onclick="mostrarCrise();return false">Ajuda com a ansiedade</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="personagem personagem-medo"><img src="medo.png" alt="Personagem Medo"></div>
+    <div class="personagem personagem-ansiedade"><img src="ansiedade.png" alt="Personagem Ansiedade"></div>
+    <div class="memoria m1"></div><div class="memoria m2"></div><div class="memoria m3"></div><div class="memoria m4"></div>
+    <div class="hero-conteudo">
+      <h1>DOMINE SUAS <span>EMOÇÕES!</span></h1>
+      <p>Medo e Ansiedade podem fazer parte da nossa jornada para encontrar o equilíbrio.</p>
+      <a href="#sobre" class="botao">Aprenda Mais →</a>
+      <a href="#" class="botao laranja" onclick="mostrarAutocuidado();return false">Começar Agora →</a>
+    </div>
+  </section>
+
+  <section class="secao" id="sobre">
+    <h2 class="titulo">Conheça suas emoções</h2>
+    <div class="cards">
+      <article class="card medo">
+        <h2>MEDO: O Guia da Prudência</h2>
+        <p>O medo pode nos ajudar a reconhecer situações de risco e nos preparar para agir com segurança.</p>
+        <p>Entender o que sentimos é um passo importante para cuidar das nossas emoções.</p>
+        <a href="#recursos" class="botao">Aprenda Mais →</a>
+        <img src="medo.png" class="card-personagem" alt="Medo">
+      </article>
+      <article class="card ansiedade">
+        <h2>ANSIEDADE: Sua Aliada na Ação</h2>
+        <p>A ansiedade pode aparecer quando pensamos no futuro ou enfrentamos situações importantes.</p>
+        <p>Quando começa a atrapalhar a rotina, é importante buscar formas saudáveis de lidar com ela.</p>
+        <a href="#" class="botao laranja" onclick="mostrarCrise();return false">Como identificar uma crise →</a>
+        <img src="ansiedade.png" class="card-personagem" alt="Ansiedade">
+      </article>
+    </div>
+  </section>
+
+  <section class="ajuda" id="recursos">
+    <h2 class="titulo">COMO PODEMOS AJUDAR?</h2>
+    <div class="recursos">
+      <article class="recurso"><div class="icone">🧠</div><h3>Identificar Emoções</h3><p>Observe e dê nome ao que você está sentindo.</p></article>
+      <article class="recurso"><div class="icone">🧘</div><h3>Ferramentas de Calma</h3><p>Respiração confortável, pausas e atividades relaxantes.</p></article>
+      <article class="recurso"><div class="icone">💜</div><h3>Aprenda com suas Emoções</h3><p>Entenda seus sentimentos e encontre maneiras de lidar.</p></article>
+      <article class="recurso"><div class="icone">🌱</div><h3>Recursos para o Dia a Dia</h3><p>Pequenas atitudes podem ajudar na sua rotina.</p></article>
+    </div>
+    <div class="botoes">
+      <a href="#" class="botao" onclick="mostrarAutocuidado();return false">PRIMEIROS PASSOS →</a>
+      <a href="#" class="botao verde" onclick="mostrarAutocuidado();return false">AUTOCUIDADO →</a>
+      <a href="#" class="botao laranja" onclick="mostrarCrise();return false">ENTENDA A ANSIEDADE →</a>
+    </div>
+  </section>
+</main>
+
+<main id="autocuidado">
+  <div class="pagina">
+    <button class="voltar" onclick="mostrarInicio()">← Voltar para a página inicial</button>
+    <h1 class="titulo-pagina">A importância do <span>autocuidado</span></h1>
+    <p class="intro">Autocuidado é o conjunto de atitudes que uma pessoa pode ter para cuidar do próprio bem-estar físico, emocional e mental. Pequenas atitudes no dia a dia podem contribuir para uma rotina mais equilibrada.</p>
+    <div class="info-grid">
+      <article class="info"><h2>🧠 Cuidar da mente</h2><p>Reconhecer sentimentos, fazer pausas, organizar pensamentos e conversar com alguém de confiança são formas de cuidar da saúde emocional.</p></article>
+      <article class="info"><h2>🧡 Cuidar do corpo</h2><p>Ter uma rotina de sono, alimentação e atividades adequada às suas necessidades contribui para o bem-estar.</p></article>
+      <article class="info"><h2>💜 Pedir ajuda</h2><p>Autocuidado também significa reconhecer quando precisamos conversar com alguém de confiança ou procurar ajuda profissional.</p></article>
+    </div>
+    <div class="dicas"><h2>🌱 Pequenos hábitos podem ajudar:</h2><ul><li>Reserve alguns minutos para descansar.</li><li>Faça atividades de que você gosta.</li><li>Organize suas tarefas sem exigir perfeição.</li><li>Converse sobre o que está sentindo.</li><li>Respeite seus limites e procure apoio quando precisar.</li></ul></div>
+    <article class="info" style="margin-top:23px"><h2>✨ Por que o autocuidado é importante?</h2><p>Prestar atenção às próprias necessidades pode ajudar a reconhecer limites e sinais de estresse, contribuindo para uma relação mais saudável com as emoções.</p></article>
+    <div class="botoes"><button class="botao" onclick="mostrarInicio()">← Voltar ao início</button><button class="botao laranja" onclick="mostrarCrise()">Como identificar uma crise →</button></div>
+  </div>
+</main>
+
+<main id="crise">
+  <div class="pagina">
+    <button class="voltar" onclick="mostrarInicio()">← Voltar para o início</button>
+    <h1 class="titulo-pagina">🧡 Como identificar uma crise de ansiedade?</h1>
+    <p class="intro">Às vezes, a ansiedade pode ficar muito intensa. Conhecer os sinais e saber como procurar ajuda pode tornar esse momento menos assustador.</p>
+    <div class="aviso"><strong>Importante:</strong> nem toda ansiedade é uma crise, e os sintomas podem ter outras causas. Não é possível confirmar o que está acontecendo apenas por uma lista de sinais.</div>
+    <div class="passos">
+      <article class="passo"><h2>1. Perceba os sinais</h2><p>Observe se aparecem preocupação muito intensa, medo, sensação de perder o controle, coração acelerado, tremores, suor, tontura ou respiração rápida. Nem todas as pessoas sentem as mesmas coisas.</p></article>
+      <article class="passo"><h2>2. Reconheça o que está sentindo</h2><p>Se for possível, pare por um momento e tente identificar suas emoções. Você pode dizer: “Estou sentindo muita ansiedade agora e preciso de apoio”.</p></article>
+      <article class="passo"><h2>3. Procure um lugar tranquilo</h2><p>Se o ambiente estiver aumentando seu desconforto, vá para um local mais calmo e seguro, se puder. Sente-se e afrouxe roupas que estejam apertadas.</p></article>
+      <article class="passo"><h2>4. Respire sem forçar</h2><p>Tente respirar suavemente, em um ritmo confortável, sem puxar o ar com força nem prender a respiração. Se isso aumentar o desconforto, volte a respirar naturalmente.</p></article>
+      <article class="passo"><h2>5. Concentre-se no presente</h2><p>Observe seus pés apoiados no chão, nomeie alguns objetos que consegue ver ou perceba os sons ao redor. Escolha o que for confortável para você.</p></article>
+      <article class="passo"><h2>6. Peça ajuda a alguém de confiança</h2><p>Avise um familiar, professor, amigo ou outro adulto de confiança. Se isso acontecer repetidamente, procure orientação de um profissional de saúde.</p></article>
+    </div>
+    <div class="ajuda-crise"><h2>💜 Quando procurar ajuda urgente?</h2><p>Não presuma que sintomas intensos são apenas ansiedade. Se houver dor forte no peito, desmaio, dificuldade intensa para respirar, sintomas novos ou muito diferentes, ou risco imediato à segurança, procure atendimento de emergência.</p><p>No Brasil, o SAMU atende pelo número <strong>192</strong>.</p></div>
+    <div class="botoes"><button class="botao" onclick="mostrarInicio()">← Voltar ao início</button><button class="botao laranja" onclick="mostrarAutocuidado()">Conheça o autocuidado →</button></div>
+  </div>
+</main>
+
+<main id="sobre-nos">
+  <div class="pagina" style="padding:45px 0;">
+    <button class="voltar" onclick="mostrarInicio()">← Voltar para o início</button>
+    <h1 class="titulo-pagina">💜 Sobre <span>Nós</span></h1>
+    <p class="intro">Somos alunas da escola FORTEC e desenvolvemos este projeto com o objetivo de ajudar adolescentes a compreenderem melhor seus sentimentos e emoções de uma forma divertida, leve e educativa.</p>
+    <div class="info-grid">
+      <article class="info"><h2>🧠 Entender os sentimentos</h2><p>Queremos mostrar que todas as emoções têm sua importância e que aprender a reconhecê-las pode nos ajudar a compreender melhor o que sentimos e como reagimos às situações do dia a dia.</p></article>
+      <article class="info"><h2>🧡 Autocuidado na prática</h2><p>Acreditamos que cada pessoa pode aprender a cuidar de si mesma, respeitando seus limites, reconhecendo suas necessidades e buscando apoio quando precisar.</p></article>
+      <article class="info"><h2>🌈 Aprender de forma divertida</h2><p>Inspiradas no universo das emoções, queremos tornar esse aprendizado mais interessante e acessível aos adolescentes, incentivando o autoconhecimento e o cuidado com o bem-estar.</p></article>
+    </div>
+    <div class="dicas"><h2>✨ Nosso objetivo</h2><p>Nosso objetivo é criar um espaço de aprendizado onde os adolescentes possam refletir sobre suas emoções, entender que cada pessoa sente de uma maneira diferente e descobrir formas de praticar o autocuidado no cotidiano.</p><p>Afinal, compreender o que sentimos também é uma forma de aprender a cuidar de nós mesmos! 💜</p></div>
+    <div class="botoes"><button class="botao laranja" onclick="mostrarAutocuidado()">Conheça o autocuidado →</button></div>
+  </div>
+</main>
+
+<main id="ia">
+ <div class="pagina"><button class="voltar" onclick="mostrarInicio()">← Voltar para o início</button>
+  <h1 class="titulo-pagina">💬 Conversa com a <span>IA</span></h1>
+  <p class="intro">Um espaço educativo para organizar pensamentos, conhecer emoções e descobrir ideias de autocuidado. A IA não é psicóloga, não faz diagnósticos e não substitui ajuda de um adulto de confiança ou profissional.</p>
+  <div class="chat-box"><div id="chatLog" class="chat-log" aria-live="polite"><div class="chat-msg bot">Oi! 💜 Posso ajudar com ideias de autocuidado, ansiedade, tristeza, raiva, medo, escola, amizades, sono, atividades criativas ou sugestões de filmes, blocos de estudo e organização do dia a dia. Escolha um assunto abaixo ou escreva sua pergunta!</div></div>
+   <p class="muted"><strong>Comece por um assunto:</strong></p>
+   <div class="chat-topics" aria-label="Assuntos prontos" style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px">
+    <button class="botao" type="button" data-prompt="Como posso lidar com a ansiedade?">💜 Ansiedade</button>
+    <button class="botao" type="button" data-prompt="Estou triste. O que posso fazer?">🌧️ Tristeza</button>
+    <button class="botao" type="button" data-prompt="Como posso me acalmar quando sinto raiva?">🔥 Raiva</button>
+    <button class="botao" type="button" data-prompt="Me dê ideias simples de autocuidado.">🌷 Autocuidado</button>
+    <button class="botao" type="button" data-prompt="Como posso lidar com a ansiedade?">💜 Ansiedade</button>
+    <button class="botao" type="button" data-prompt="Estou triste. O que posso fazer?">🌧️ Tristeza</button>
+    <button class="botao" type="button" data-prompt="Como posso me acalmar quando sinto raiva?">🔥 Raiva</button>
+    <button class="botao" type="button" data-prompt="Me dê ideias simples de autocuidado.">🌷 Autocuidado</button>
+    <button class="botao" type="button" data-prompt="Como posso organizar um bloco de estudo de 25 minutos?">⏱️ Bloco de estudo</button>
+    <button class="botao" type="button" data-prompt="Me ajude a organizar meu dia a dia com uma rotina simples.">🗓️ Organizar o dia</button>
+    <button class="botao" type="button" data-prompt="Como faço um cronograma para estudar para uma prova?">📝 Cronograma de prova</button>
+    <button class="botao" type="button" data-prompt="Me dê dicas para parar de procrastinar e começar uma tarefa.">🚀 Procrastinação</button>
+    <button class="botao" type="button" data-prompt="Como posso me concentrar melhor nos estudos?">🎯 Concentração</button>
+    <button class="botao" type="button" data-prompt="Me dê dicas para organizar minhas tarefas e prioridades.">✅ Tarefas e prioridades</button>
+    <button class="botao" type="button" data-prompt="Me indique filmes sobre emoções.">🎬 Filmes</button>
+    <button class="botao" type="button" data-prompt="Quero ideias de atividades criativas para expressar sentimentos.">🎨 Atividades</button>
+    <button class="botao" type="button" data-prompt="Como posso melhorar uma amizade depois de uma briga?">🫶 Amizades</button>
+   </div>
+   <form class="extra-form" id="chatForm"><input id="chatInput" maxlength="1000" placeholder="Escreva sua mensagem..." aria-label="Sua mensagem" required><button class="botao laranja" type="submit">Enviar</button></form>
+   <p id="iaStatus" class="status-ia">As respostas prontas funcionam sem configurar uma chave de API. Com uma chave válida, a conversa pode usar a IA.</p>
+  </div><div class="aviso" style="margin-top:20px"><strong>Privacidade:</strong> não envie nome completo, endereço, senha ou outros dados pessoais. As mensagens são enviadas ao serviço de IA quando você usa a conversa.</div>
+ </div>
+</main>
+<main id="contatos">
+ <div class="pagina"><button class="voltar" onclick="mostrarInicio()">← Voltar para o início</button>
+  <h1 class="titulo-pagina">📞 Minha rede de <span>apoio</span></h1>
+  <p class="intro">Você pode guardar aqui pessoas de confiança, como familiares, responsáveis, professores ou amigos que possam ajudar quando precisar conversar.</p>
+  <div class="aviso"><strong>Importante:</strong> os contatos ficam salvos apenas neste navegador/aparelho. Em um dispositivo compartilhado, outras pessoas que usam o mesmo navegador podem conseguir vê-los.</div>
+  <form class="extra-form" id="contactForm"><input id="contactName" maxlength="70" placeholder="Nome da pessoa" required><input id="contactPhone" maxlength="30" placeholder="Telefone (opcional)"><button class="botao laranja" type="submit">Adicionar contato</button></form>
+  <div id="contactList"></div>
+  <div class="ajuda-crise"><h2>Emergência no Brasil</h2><p>Em emergência médica, ligue para o SAMU: <strong>192</strong>. Em perigo imediato ou situação de violência, ligue para a Polícia: <strong>190</strong>. Se puder, procure imediatamente um adulto de confiança.</p></div>
+ </div>
+</main>
+<main id="filmes">
+ <div class="pagina"><button class="voltar" onclick="mostrarInicio()">← Voltar para o início</button>
+  <h1 class="titulo-pagina">🎬 Histórias sobre <span>emoções</span></h1>
+  <p class="intro">Algumas sugestões para conversar sobre sentimentos, amizade, mudanças e autoconhecimento. Confira a classificação indicativa com um responsável antes de assistir.</p>
+  <div class="filmes-grid">
+   <article class="filme"><h2>Divertida Mente</h2><p>Mostra como diferentes emoções participam das experiências e das mudanças da vida.</p><p><strong>Para refletir:</strong> por que todas as emoções têm uma função?</p></article>
+   <article class="filme"><h2>Red: Crescer é uma Fera</h2><p>Uma história sobre crescer, mudanças, amizades e sentimentos intensos.</p><p><strong>Para refletir:</strong> como lidar com expectativas e mudanças?</p></article>
+   <article class="filme"><h2>Viva – A Vida é uma Festa</h2><p>Aborda família, memória, identidade e a importância das conexões.</p><p><strong>Para refletir:</strong> como nossas relações influenciam quem somos?</p></article>
+   <article class="filme"><h2>Extraordinário</h2><p>Uma história sobre empatia, convivência e enfrentar desafios sociais.</p><p><strong>Para refletir:</strong> como podemos acolher alguém?</p></article>
+   <article class="filme"><h2>Operação Big Hero</h2><p>Fala sobre amizade, apoio e diferentes formas de lidar com momentos difíceis.</p><p><strong>Para refletir:</strong> como pedir e oferecer ajuda?</p></article>
+   <article class="filme"><h2>Luca</h2><p>Uma história sobre amizade, pertencimento e coragem para conhecer o mundo.</p><p><strong>Para refletir:</strong> como apoiar alguém que tem medo de ser julgado?</p></article>
+  </div><p class="muted" style="margin-top:18px">As sugestões são educativas; confira a classificação indicativa e avalie com um responsável se cada filme é adequado para você.</p>
+ </div>
+</main>
+<footer>💜 Emoções em Equilíbrio — cuidar das emoções também é cuidar de si.<div class="footer-extra"><button class="botao" id="installBtn" hidden>Instalar no celular</button></div></footer>
+
+<script>
+const pages=['inicio','autocuidado','crise','sobre-nos','ia','contatos','filmes'];
+function mostrarPagina(id){pages.forEach(p=>{const el=document.getElementById(p);if(el)el.style.display=p===id?'block':'none';});window.scrollTo({top:0,behavior:'smooth'});}
+function mostrarInicio(){mostrarPagina('inicio')}
+function mostrarAutocuidado(){mostrarPagina('autocuidado')}
+function mostrarCrise(){mostrarPagina('crise')}
+function mostrarSobreNos(){mostrarPagina('sobre-nos')}
+function mostrarIA(){mostrarPagina('ia')}
+function mostrarContatos(){mostrarPagina('contatos');renderContacts()}
+function mostrarFilmes(){mostrarPagina('filmes')}
+
+const chatLog=document.getElementById('chatLog');
+const chatForm=document.getElementById('chatForm');
+const chatInput=document.getElementById('chatInput');
+const iaStatus=document.getElementById('iaStatus');
+let chatMessages=[];
+function addChat(text,who){const el=document.createElement('div');el.className='chat-msg '+who;el.textContent=text;chatLog.appendChild(el);chatLog.scrollTop=chatLog.scrollHeight;}
+// Respostas prontas locais: a conversa continua respondendo mesmo se a API/servidor falhar.
+function respostaLocal(pergunta){
+ const t=String(pergunta||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const regras=[
+  [['oi','ola','bom dia','boa tarde','boa noite','eai','tudo bem'],'Oi! 💜 Que bom ter você aqui! Posso conversar sobre sentimentos, autocuidado, escola, amizades, sono, atividades criativas ou indicar filmes. Escolha um assunto ou me conte o que está procurando.'],
+  [['ansiedade','ansiosa','ansioso','preocupada','preocupado','nervosa','nervoso'],'💜 A ansiedade pode deixar a mente cheia de preocupações. Experimente apoiar os pés no chão, respirar no seu ritmo e observar cinco coisas ao seu redor. Depois escolha um pequeno passo possível agora. Se isso acontecer muito ou ficar difícil de lidar, converse com um adulto de confiança.'],
+  [['panico','crise','falta de ar','coracao acelerado'],'Sinto muito que esteja passando por isso. Vá para um lugar seguro e chame alguém de confiança para ficar com você. Tente notar o ambiente ao redor sem forçar a respiração. Se os sintomas forem intensos, novos ou preocupantes, peça ajuda médica imediatamente.'],
+  [['triste','tristeza','chorar','choro','desanimada','desanimado'],'🧡 Você não precisa fingir que está tudo bem. Pode ajudar escrever o que sente, ouvir uma música tranquila, descansar ou conversar com alguém de confiança. Não precisa resolver tudo de uma vez.'],
+  [['raiva','irritada','irritado','brava','bravo'],'Quando a raiva aparece, tente fazer uma pausa antes de responder. Se puder, afaste-se por alguns minutos, beba água e organize o que quer dizer. Sentir raiva é humano; o importante é encontrar uma forma segura de expressá-la.'],
+  [['medo','assustada','assustado','insegura','inseguro'],'💜 O medo tenta nos proteger. Pergunte a si mesma: “Existe um perigo agora ou estou preocupada com algo que pode acontecer?” Procure alguém de confiança e avance em passos pequenos, sem se forçar.'],
+  [['autocuidado','cuidar de mim','rotina'],'🌷 Autocuidado pode ser simples: beber água, fazer uma pausa, tomar banho, descansar, escrever pensamentos, ouvir música, desenhar ou conversar com alguém. Escolha uma ideia pequena para hoje; não precisa fazer tudo.'],
+  [['estresse','estressada','estressado','sobrecarregada','sobrecarregado'],'Quando tudo parece demais, anote o que precisa fazer e escolha só uma prioridade. Divida tarefas grandes em passos menores, faça pausas e peça ajuda. Você não precisa dar conta de tudo sozinha.'],
+  [['escola','prova','nota','estudar','estudos','trabalho escolar'],'📚 Para estudar com menos pressão, escolha uma tarefa por vez, faça blocos curtos com pausas e explique o conteúdo com suas palavras. Tente descansar e procure um professor ou responsável se a pressão estiver grande.'],
+  [['bloco de estudo','pomodoro','25 minutos','25 min','blocos de estudo'],'⏱️ Experimente um bloco de estudo simples: (1) escolha apenas um assunto; (2) tire da mesa o que distrai; (3) estude por 20–25 minutos; (4) faça uma pausa de 5 minutos para levantar, beber água ou descansar os olhos; (5) anote o que conseguiu fazer e escolha o próximo passo. Se 25 minutos parecer muito, comece com 10. Ajuste o tempo às suas necessidades.'],
+  [['organizar meu dia','organizar o dia','dia a dia','rotina diaria','rotina diária','organizar minha rotina'],'🗓️ Para organizar o dia sem complicar: escreva tudo o que precisa fazer, escolha até três prioridades realistas, coloque horários para escola/estudo e também para refeições, pausas e descanso. Deixe um pequeno espaço para imprevistos. A rotina é uma ajuda, não uma regra perfeita: adapte quando necessário.'],
+  [['cronograma','planejar prova','plano de estudos','estudar para uma prova','calendario de estudo'],'📝 Para montar um cronograma: liste as matérias e os conteúdos, marque a data da prova, divida o conteúdo pelos dias disponíveis e alterne estudo com revisão e exercícios. Comece pelo assunto mais difícil ou mais urgente, sem deixar de dormir. Reserve um tempo para revisar e ajuste o plano se alguma tarefa levar mais tempo.'],
+  [['procrastinar','procrastinacao','procrastinação','adiando','sem conseguir começar','não consigo começar','nao consigo comecar'],'🚀 Para começar uma tarefa que você está adiando, transforme-a no menor primeiro passo possível: abrir o arquivo, escrever o título ou resolver uma questão. Combine consigo mesma só 5 minutos de início e deixe o celular longe se isso ajudar. Se estiver adiando porque está cansada ou sobrecarregada, faça uma pausa e peça ajuda para dividir a tarefa.'],
+  [['concentrar','concentracao','concentração','foco','distraio','distraída','distraido'],'🎯 Algumas ideias para melhorar o foco: escolha uma tarefa por vez, deixe à vista apenas o material necessário, silencie notificações, use um timer curto e faça pausas. Se música com letra distrair, teste instrumental ou silêncio. Distrações acontecem; perceba e volte à tarefa sem se culpar.'],
+  [['prioridades','lista de tarefas','organizar tarefas','organização','organizacao','agenda','planejar a semana'],'✅ Faça uma lista e marque cada tarefa como: urgente, importante ou pode esperar. Escolha uma ou duas prioridades para começar e divida as tarefas grandes em passos menores. Uma agenda simples já basta; não precisa planejar cada minuto. No fim do dia, revise o que falta e passe o restante para outro momento realista.'],
+  [['resumo','fazer resumo','mapa mental','memorizar','memorizar materia','revisar conteúdo','revisar conteudo'],'📖 Para revisar melhor, tente explicar o assunto com suas palavras, criar perguntas e respostas, fazer um mapa mental e resolver exercícios. Volte ao conteúdo em mais de um dia, em vez de tentar aprender tudo de uma vez. Se algo não ficou claro, anote a dúvida para perguntar ao professor.'],
+  [['trabalho em grupo','trabalho escolar','apresentacao','apresentação','seminario','seminário'],'🤝 Para organizar um trabalho escolar, definam o tema, dividam as partes entre as pessoas, combinem prazos menores e reservem tempo para juntar tudo e ensaiar. Anote o que ficou sob sua responsabilidade e avise o grupo se precisar de ajuda.']
+  [['amizade','amiga','amigo','briga','colegas'],'Amizades saudáveis têm respeito, escuta e espaço para ser quem somos. Depois de uma briga, espere se acalmar e explique como se sentiu. Se houver humilhação, ameaça ou bullying, procure um adulto de confiança.'],
+  [['familia','mãe','mae','pai','pais','responsavel'],'Conversas difíceis podem dar nervoso. Tente escolher um momento calmo, explicar como se sente e dizer que tipo de ajuda precisa. Se não se sentir segura para falar com essa pessoa, procure outro adulto confiável.'],
+  [['sono','dormir','insonia','cansada','cansado'],'🌙 Uma rotina tranquila pode ajudar: horários regulares, menos telas antes de dormir e um ambiente confortável. Anotar preocupações também pode ajudar a retomá-las no dia seguinte. Se o problema persistir, fale com um responsável.'],
+  [['filme','filmes','indique','indicacao','assistir','desenho'],'🎬 Algumas sugestões: Divertida Mente (reconhecer emoções), Red: Crescer é uma Fera (mudanças e amizades), Luca (pertencimento), Extraordinário (empatia), Viva – A Vida é uma Festa (família) e Operação Big Hero (amizade e apoio). Confira a classificação indicativa com um responsável.'],
+  [['musica','livro','leitura','desenhar','atividade criativa'],'🎨 Ideias criativas: montar uma playlist para o seu humor, ler algumas páginas, desenhar o que sente, escrever um poema ou fazer um diário de emoções. A ideia é dar espaço ao sentimento, não obrigar você a se sentir diferente.'],
+  [['respirar','respiracao','acalmar','relaxar'],'Vamos fazer uma pausa? Apoie os pés no chão e nomeie mentalmente cinco coisas que vê, quatro que sente pelo tato e três que ouve. Respire no seu ritmo, sem forçar. Se não ajudar, tente outra atividade ou chame alguém de confiança.'],
+  [['motivacao','motivação','preguica','sem vontade'],'Escolha um primeiro passo bem pequeno, como abrir o caderno ou arrumar um cantinho por dois minutos. Depois decida se quer continuar. Descansar também é importante; tente perceber do que você precisa neste momento.'],
+  [['obrigada','obrigado','valeu','ajudou'],'Fico feliz que a conversa tenha ajudado! 💜 Você merece apoio também fora daqui. Se quiser, podemos falar sobre autocuidado, emoções, escola, amizades ou filmes.'],
+  [['me machucar','me ferir','nao quero viver','quero sumir','suicidio','me matar'],'Sinto muito que esteja doendo tanto. Você merece apoio agora. Procure imediatamente um adulto de confiança e conte como está se sentindo; fique perto de alguém que possa ajudar. Se houver perigo imediato no Brasil, ligue para o SAMU 192 em emergência médica ou para a Polícia 190 em perigo imediato.']
+ ];
+ const achada=regras.find(([palavras])=>palavras.some(p=>t.includes(p.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase())));
+ return achada?achada[1]:'💜 Posso oferecer ideias educativas sobre autocuidado, ansiedade, tristeza, raiva, medo, blocos de estudo, cronogramas, concentração, organização do dia a dia, amizades, sono, atividades criativas e filmes. Experimente perguntar “como me acalmar?”, “me indique um filme” ou “como lidar com a pressão da escola?”. Estas respostas são sugestões gerais e não substituem ajuda de um adulto de confiança ou profissional.';
+}
+fetch('/api/status').then(r=>r.json()).then(s=>{iaStatus.textContent=s.aiConfigured?'IA conectada. Evite compartilhar dados pessoais.':'Respostas prontas ativadas. Escolha um assunto ou escreva sua pergunta.'}).catch(()=>{iaStatus.textContent='Respostas prontas ativadas — a conversa funciona mesmo sem conexão com a API.'});
+chatForm.addEventListener('submit',async e=>{e.preventDefault();const text=chatInput.value.trim();if(!text)return;addChat(text,'user');chatMessages.push({role:'user',content:text});chatInput.value='';const send=chatForm.querySelector('button');send.disabled=true;send.textContent='Respondendo...';let respondida=false;try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatMessages.slice(-10)})});const data=await r.json();if(r.ok&&data.reply){addChat(data.reply,'bot');chatMessages.push({role:'assistant',content:data.reply});iaStatus.textContent=data.mode==='respostas-prontas'?'Resposta pronta por assunto.':'A IA pode errar e não substitui apoio humano.';respondida=true;}}catch(err){/* Usa resposta local se o servidor/API não responder. */}if(!respondida){const reply=respostaLocal(text);addChat(reply,'bot');chatMessages.push({role:'assistant',content:reply});iaStatus.textContent='Resposta pronta por assunto — funcionando sem conexão com a API.';}send.disabled=false;send.textContent='Enviar';});
+document.querySelectorAll('[data-prompt]').forEach(btn=>btn.addEventListener('click',()=>{chatInput.value=btn.dataset.prompt;chatForm.requestSubmit();}));
+
+const contactKey='emocoes-equilibrio-contatos-v1';
+function getContacts(){try{return JSON.parse(localStorage.getItem(contactKey)||'[]')}catch{return []}}
+function saveContacts(items){localStorage.setItem(contactKey,JSON.stringify(items));}
+function renderContacts(){const list=document.getElementById('contactList');list.textContent='';const contacts=getContacts();if(!contacts.length){const p=document.createElement('p');p.className='muted';p.textContent='Você ainda não adicionou contatos.';list.appendChild(p);return;}contacts.forEach((c,i)=>{const item=document.createElement('div');item.className='item-salvo';const info=document.createElement('div');const strong=document.createElement('strong');strong.textContent=c.name;info.appendChild(strong);if(c.phone){const p=document.createElement('p');p.className='muted';p.textContent=c.phone;info.appendChild(p);}item.appendChild(info);const actions=document.createElement('div');if(c.phone){const a=document.createElement('a');a.className='botao verde';a.href='tel:'+c.phone.replace(/[^+0-9]/g,'');a.textContent='Ligar';actions.appendChild(a);}const del=document.createElement('button');del.className='botao';del.textContent='Remover';del.addEventListener('click',()=>{const current=getContacts();current.splice(i,1);saveContacts(current);renderContacts();});actions.appendChild(del);item.appendChild(actions);list.appendChild(item);});}
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('contactName').value.trim();const phone=document.getElementById('contactPhone').value.trim();if(!name)return;const contacts=getContacts();contacts.push({name,phone});saveContacts(contacts);e.target.reset();renderContacts();});
+
+let installPrompt;const installBtn=document.getElementById('installBtn');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.hidden=false;});installBtn.addEventListener('click',async()=>{if(!installPrompt){alert('No celular, abra o menu do navegador e escolha “Adicionar à tela inicial” ou “Instalar app”, se disponível.');return;}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true;});
+if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}
+</script>
+</body>
+</html>
